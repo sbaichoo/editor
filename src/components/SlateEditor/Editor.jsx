@@ -1,7 +1,7 @@
 import React, {useCallback, useMemo, useState} from "react";
-import {createEditor} from "slate";
+import {createEditor, Transforms} from "slate";
 import {withHistory} from "slate-history";
-import {Editable, Slate, withReact} from "slate-react";
+import {Editable, Slate, useEditor, withReact} from "slate-react";
 import Toolbar from "./Toolbar/Toolbar";
 import {fontFamilyMap, sizeMap} from "./utils/SlateUtilityFunctions.js";
 import withLinks from "./plugins/withLinks.js";
@@ -11,6 +11,45 @@ import "./Editor.css";
 import Link from "./Elements/Link/Link";
 import Image from "./Elements/Image/Image";
 import Video from "./Elements/Video/Video";
+import {html} from "./html";
+
+
+const document = new DOMParser().parseFromString(html, 'text/html');
+
+function convertToJSXElement(domElement) {
+    // Use React.createElement to create a JSX element
+    return React.createElement(
+        domElement.tagName.toLowerCase(), // Element type
+        {
+            key: domElement.getAttribute('id') || domElement.getAttribute('class'), // Key (optional)
+            // Add any other props or attributes you want to pass
+            // For example, you can set attributes like className, id, etc.
+        },
+        // Convert child elements recursively
+        Array.from(domElement.children).map(convertToJSXElement)
+    );
+}
+
+// Create an array of JSX elements by converting each element in the HTMLCollection
+const jsxElements = Array.from(document.body.children).map(convertToJSXElement);
+
+function convertParagraphToSlateTextWithStyle(pElement) {
+    const textNode = {
+        text: pElement.textContent,
+        className:pElement.className, // Preserve class name as a boolean
+        id: pElement.id,
+        style: pElement.style.cssText, // Preserve the style attribute
+    };
+
+    return {
+        type: 'paragraph', // Define the type as per your Slate.js schema
+        children: [textNode],
+    };
+}
+
+let map = Array.from(document.body.children).map(convertParagraphToSlateTextWithStyle);
+
+console.log(map)
 
 const Element = (props) => {
     const {attributes, children, element} = props;
@@ -136,12 +175,13 @@ const SlateEditor = () => {
 
     const initialValue = useMemo(
         () =>
-            JSON.parse(localStorage.getItem('content')) || [
-                {
-                    type: 'paragraph',
-                    children: [{text: 'A line of text in a paragraph.'}],
-                },
-            ],
+            JSON.parse(localStorage.getItem('content')) ||
+            /*               {
+                               type: 'paragraph',
+                               children: [{text: 'A line of text in a paragraph.'}],
+                           },*/
+            map
+        ,
         []
     )
 

@@ -1,0 +1,36 @@
+export const html = `
+<p class="p" id="p56" style="top:108.05847pt;left:70.972pt;line-height:10.657066pt;font-family:NBBDGI TT9B1o00;font-size:10.998pt;letter-spacing:0.001pt;width:6.125885pt;">1</p>
+            <p class="p" id="p57" style="top:108.05847pt;left:86.09433pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:30.563446pt;">Which</p>
+            <p class="p" id="p58" style="top:108.05847pt;left:120.11222pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:17.123878pt;">two</p>
+            <p class="p" id="p59" style="top:108.05847pt;left:140.69054pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:26.934097pt;">foods</p>
+            <p class="p" id="p60" style="top:108.05847pt;left:171.07358pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:28.759766pt;">would</p>
+            <p class="p" id="p61" style="top:108.05847pt;left:203.27258pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:36.10643pt;">provide</p>
+            <p class="p" id="p62" style="top:108.05847pt;left:242.81256pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:15.309235pt;">the</p>
+            <p class="p" id="p63" style="top:108.05847pt;left:261.57623pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:20.808197pt;">best</p>
+            <p class="p" id="p64" style="top:108.05847pt;left:285.83887pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:38.536957pt;">sources</p>
+            <p class="p" id="p65" style="top:108.05847pt;left:327.81586pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:9.183319pt;">of</p>
+            <p class="p" id="p66" style="top:108.05847pt;left:340.4536pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:72.81769pt;">carbohydrates,</p>
+            <p class="p" id="p67" style="top:108.05847pt;left:416.69855pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:40.351654pt;">calcium,</p>
+            <p class="p" id="p68" style="top:108.05847pt;left:460.49155pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:21.413086pt;">fibre</p>
+            <p class="p" id="p69" style="top:108.05847pt;left:485.34946pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:53.868317pt;">(roughage)</p>
+            <p class="p" id="p70" style="top:108.05847pt;left:542.6326pt;line-height:10.767044pt;font-family:NBBDGJ TT9B2o00;font-size:10.998pt;word-spacing:0.397pt;width:18.377747pt;">and</p>
+            <p class="p" id="p71" style="top:120.70649pt;left:92.2323pt;line-height:10.767433pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;width:34.85392pt;">vitamin</p>
+            <p class="p" id="p72" style="top:120.70649pt;left:130.14377pt;line-height:10.767433pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;width:14.066956pt;">C?</p>
+            <p class="p" id="p73" style="top:144.32007pt;left:92.2323pt;line-height:10.657455pt;font-family:NBBDGI TT9B1o00;font-size:10.9984pt;width:7.9408417pt;">A</p>
+            <p class="p" id="p74" style="top:144.32007pt;left:113.45921pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:3.0E-4pt;letter-spacing:-3.0E-4pt;width:17.114609pt;">fish</p>
+            <p class="p" id="p75" style="top:144.32007pt;left:133.62808pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:3.0E-4pt;letter-spacing:-3.0E-4pt;width:18.37172pt;">and</p>
+            <p class="p" id="p76" style="top:144.32007pt;left:155.05405pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:3.0E-4pt;letter-spacing:-3.0E-4pt;width:23.867615pt;">eggs</p>
+            <p class="p" id="p77" style="top:165.97589pt;left:92.2323pt;line-height:10.657455pt;font-family:NBBDGI TT9B1o00;font-size:10.9984pt;width:7.9408417pt;">B</p>
+            <p class="p" id="p78" style="top:165.97589pt;left:113.45921pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:3.0E-4pt;letter-spacing:-3.0E-4pt;width:28.153702pt;">green</p>
+            <p class="p" id="p79" style="top:165.97589pt;left:144.66716pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:3.0E-4pt;letter-spacing:-3.0E-4pt;width:29.990417pt;">beans</p>
+            <p class="p" id="p80" style="top:165.97589pt;left:177.71182pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:3.0E-4pt;letter-spacing:-3.0E-4pt;width:18.37172pt;">and</p>
+            <p class="p" id="p81" style="top:165.97589pt;left:199.13779pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:3.0E-4pt;letter-spacing:-3.0E-4pt;width:29.965118pt;">cereal</p>
+            <p class="p" id="p82" style="top:187.63171pt;left:92.2323pt;line-height:10.657455pt;font-family:NBBDGI TT9B1o00;font-size:10.9984pt;width:7.9408417pt;">C</p>
+            <p class="p" id="p83" style="top:187.63171pt;left:113.46361pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:0.9302pt;letter-spacing:2.0E-4pt;width:24.478043pt;">meat</p>
+            <p class="p" id="p84" style="top:187.63171pt;left:141.0058pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:0.9302pt;letter-spacing:2.0E-4pt;width:18.382736pt;">and</p>
+            <p class="p" id="p85" style="top:187.63171pt;left:162.4197pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:0.9302pt;letter-spacing:2.0E-4pt;width:19.550766pt;">milk</p>
+            <p class="p" id="p86" style="top:209.28754pt;left:92.2653pt;line-height:10.657455pt;font-family:NBBDGI TT9B1o00;font-size:10.9984pt;width:7.9408417pt;">D</p>
+            <p class="p" id="p87" style="top:209.28754pt;left:113.5252pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:4.0E-4pt;letter-spacing:-4.0E-4pt;width:36.697258pt;">yoghurt</p>
+            <p class="p" id="p88" style="top:209.28754pt;left:153.27562pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:4.0E-4pt;letter-spacing:-4.0E-4pt;width:18.369522pt;">and</p>
+            <p class="p" id="p89" style="top:209.28754pt;left:174.69829pt;line-height:10.767441pt;font-family:NBBDGJ TT9B2o00;font-size:10.9984pt;word-spacing:4.0E-4pt;letter-spacing:-4.0E-4pt;width:35.48082pt;">cheese</p>
+`
