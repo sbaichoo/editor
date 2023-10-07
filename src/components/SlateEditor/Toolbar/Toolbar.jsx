@@ -62,7 +62,6 @@ const Toolbar = () => {
     );
   };
   const Dropdown = ({ format, options }) => {
-    console.log("options", options);
     return (
       <select
         value={activeMark(editor, format)}
@@ -103,7 +102,6 @@ const Toolbar = () => {
                   />
                 );
               case "embed":
-                console.log("element", element);
                 return (
                   <Embed
                     key={element.id}

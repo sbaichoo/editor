@@ -20,9 +20,7 @@ export const createVideoNode = ({ url, width, height }) => ({
 
 export const insertEmbed = (editor, embedData, format) => {
   const { url, width, height, src } = embedData;
-  console.log("embedData", embedData);
   if (src && !url) {
-    console.log("im here");
     embedData.width = width ? `${width}px` : "100%";
     embedData.height = height ? `${height}px` : "auto";
   }
@@ -34,8 +32,6 @@ export const insertEmbed = (editor, embedData, format) => {
       ? createImageNode("EditorImage", embedData)
       : createVideoNode(embedData);
 
-  console.log(format);
-  console.log("embed", embed);
   Transforms.insertNodes(editor, embed, { select: true });
   Transforms.insertNodes(editor, createParagraph(""), { mode: "highest" });
 };

@@ -68,8 +68,6 @@ let map2 = Array.from(document.body.children).map(convertParagraphToSlateTextWit
         }
     );
 
-console.log(map2);
-
 const Element = (props) => {
     const {attributes, children, element} = props;
 
@@ -186,8 +184,10 @@ const Leaf = ({attributes, children, leaf}) => {
     if (leaf.className) {
         children = <span className={leaf.className}>{children}</span>;
     }
+    if (leaf.id) {
+        children = <span className={leaf.id}>{children}</span>;
+    }
     if (leaf.style) {
-        console.log(inlineStylesToObject(leaf.style));
         children = <span style={inlineStylesToObject(leaf.style)}>{children}</span>;
     }
     return <span {...attributes}>{children}</span>;
@@ -244,8 +244,6 @@ const SlateEditor = () => {
             onChange={
                 (newValue) => {
                     setValue(newValue)
-
-                    console.log({newValue})
 
                     const isAstChange = editor.operations.some(
                         op => 'set_selection' !== op.type
