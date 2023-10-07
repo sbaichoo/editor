@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.1.10",
     "emotion": "^11.0.0",
     "image-extensions": "^1.1.0",
+    "inline-style-2-json": "^1.1.0",
     "interweave": "^12.7.2",
     "is-hotkey": "^0.2.0",
     "is-url": "^1.2.4",

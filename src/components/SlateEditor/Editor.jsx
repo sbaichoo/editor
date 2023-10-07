@@ -1,7 +1,7 @@
 import React, {useCallback, useMemo, useState} from "react";
-import {createEditor, Transforms} from "slate";
+import {createEditor} from "slate";
 import {withHistory} from "slate-history";
-import {Editable, Slate, useEditor, withReact} from "slate-react";
+import {Editable, Slate, withReact} from "slate-react";
 import Toolbar from "./Toolbar/Toolbar";
 import {fontFamilyMap, sizeMap} from "./utils/SlateUtilityFunctions.js";
 import withLinks from "./plugins/withLinks.js";
@@ -12,6 +12,8 @@ import Link from "./Elements/Link/Link";
 import Image from "./Elements/Image/Image";
 import Video from "./Elements/Video/Video";
 import {html} from "./html";
+
+var inline = require('inline-style-2-json');
 
 
 const document = new DOMParser().parseFromString(html, 'text/html');
@@ -36,7 +38,7 @@ const jsxElements = Array.from(document.body.children).map(convertToJSXElement);
 function convertParagraphToSlateTextWithStyle(pElement) {
     const textNode = {
         text: pElement.textContent,
-        className:pElement.className, // Preserve class name as a boolean
+        className: pElement.className, // Preserve class name as a boolean
         id: pElement.id,
         style: pElement.style.cssText, // Preserve the style attribute
     };
@@ -47,9 +49,26 @@ function convertParagraphToSlateTextWithStyle(pElement) {
     };
 }
 
-let map = Array.from(document.body.children).map(convertParagraphToSlateTextWithStyle);
+let map2 = Array.from(document.body.children).map(convertParagraphToSlateTextWithStyle)
+    .map(value => {
+            let style = value.children.at(0).style;
+            let inline1 = inline(style);
 
-console.log(map)
+            let keys = Object.keys(inline1).map(value1 => value1.trim());
+
+            let values = Object.values(inline1).map(value1 => value1.toString().trim().replace('"', '').replace('\"', ''));
+
+            const merged = keys.reduce((obj, key, index) => ({...obj, [key]: values[index]}), {});
+
+            value.children[0] = {
+                ...value.children.at(0),
+                ...merged
+            };
+            return value;
+        }
+    );
+
+console.log(map2);
 
 const Element = (props) => {
     const {attributes, children, element} = props;
@@ -164,8 +183,33 @@ const Leaf = ({attributes, children, leaf}) => {
         const family = fontFamilyMap[leaf.fontFamily];
         children = <span style={{fontFamily: family}}>{children}</span>;
     }
+    if (leaf.className) {
+        children = <span className={leaf.className}>{children}</span>;
+    }
+    if (leaf.style) {
+        console.log(inlineStylesToObject(leaf.style));
+        children = <span style={inlineStylesToObject(leaf.style)}>{children}</span>;
+    }
     return <span {...attributes}>{children}</span>;
 };
+
+
+function inlineStylesToObject(styles) {
+
+    const regex = /([\w-]+)\s*:\s*((?:(?:"[^"]+")|(?:'[^']+')|[^;])*);?/g;
+
+    const obj = {};
+
+    let match;
+    // eslint-disable-next-line no-cond-assign
+    while (match = regex.exec(styles)) {
+        obj[match[1]] = match[2].trim().replaceAll('"', '');
+    }
+
+    return obj;
+
+}
+
 const SlateEditor = () => {
     const editor = useMemo(
         () =>
@@ -180,7 +224,7 @@ const SlateEditor = () => {
                                type: 'paragraph',
                                children: [{text: 'A line of text in a paragraph.'}],
                            },*/
-            map
+            map2
         ,
         []
     )
